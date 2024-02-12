@@ -1,0 +1,15 @@
+steps:
+  - id: Make Script deployable
+    name: gcr.io/cloud-builders/gcloud
+    entrypoint: /bin/bash
+    args: 
+      - -c
+      - |
+        chmod +x ./deploy_script.sh
+  - id: Trigger Cortex Deployment
+    name: gcr.io/cloud-builders/gcloud
+    entrypoint: /bin/bash
+    args: 
+      - -c
+      - |
+        ./deploy_script.sh || exit 0
