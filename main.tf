@@ -25,9 +25,3 @@ module "cortex" {
 
   service_account_key_file = var.service_account_key_file
 }
-
-module "ai_challenge" {
-  source = "./ai-challenge-module"
-
-}
-
